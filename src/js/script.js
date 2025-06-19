@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const socket = io();
+  const socket = io('http://localhost:5000');
 
   const $ = (id) => {
     return document.getElementById(id);
