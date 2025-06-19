@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat</title>
+  <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+  <link rel="stylesheet" href="/css/styles.css"/>
+  <script src="/js/script.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="main-content">
+      <div class="messages-section">
+        <div class="messages-header">
+          <span>Сообщения</span>
+          <span id="onlineCount" style="float: right; font-weight: normal; color: #666;"></span>
+        </div>
+        <div class="messages-list" id="messagesList">
+          <div class="notification">
+            Добро пожаловать в чат! Представьтесь и начните общение.
+          </div>
+        </div>
+        <div class="message-form">
+          <input 
+            type="text" 
+            id="messageInput" 
+            class="input-field" 
+            placeholder="Напишите сообщение..." 
+            maxlength="500"
+          />
+          <button type="button" id="sendButton" class="send-button">
+            Отправить
+          </button>
+        </div>
+      </div>
+      
+      <div class="users-section">
+        <div class="users-header">
+          Участники
+        </div>
+        <div class="users-list" id="usersList">
+          <div class="notification">
+            Пользователи появятся здесь
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <h2 class="modal-title">Представьтесь</h2>
+      <input 
+        type="text" 
+        id="nicknameInput" 
+        class="modal-input" 
+        placeholder="Введите ваш никнейм..."
+        maxlength="20"
+      />
+      <div id="loginError" class="error-message" style="display: none;"></div>
+      <button type="button" id="loginButton" class="modal-button">
+        Войти в чат
+      </button>
+    </div>
+  </div>
+</body>
+</html>
